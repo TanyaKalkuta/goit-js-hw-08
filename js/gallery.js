@@ -87,9 +87,28 @@ galleryList.addEventListener("click", onElementClic);
 
 function onElementClic(event) {
   event.preventDefault();
-  console.log(event.target.dataset.source);
+  if (event.target.nodeName !== "IMG") return;
+
+  const largeImage = event.target.dataset.source;
+
+  const instance = basicLightbox.create(
+    `<img src="${largeImage}" width="1112" height="640">`,
+    {
+      onShow: (instance) => {
+        document.addEventListener("keydown", onEscPress);
+      },
+      onClose: (instance) => {
+        document.removeEventListener("keydown", onEscPress);
+      },
+    }
+  );
+
+  instance.show();
+
+  // закриття по Escape
+  function onEscPress(e) {
+    if (e.code === "Escape") {
+      instance.close();
+    }
+  }
 }
-
-//modalka
-
-const instance = basicLightbox.create(document.querySelector("#template"));
