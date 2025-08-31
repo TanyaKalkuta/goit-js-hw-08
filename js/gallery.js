@@ -89,6 +89,10 @@ function onElementClic(event) {
   event.preventDefault();
 
   if (event.target.nodeName !== "IMG") return;
+  // або так:
+  // if (!event.target.classList.contains("gallery-image")) return;
+  // або так:
+  // if (event.target === event.currentTarget) return;
 
   const largeImage = event.target.dataset.source;
 
