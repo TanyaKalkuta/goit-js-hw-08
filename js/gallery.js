@@ -87,6 +87,7 @@ galleryList.addEventListener("click", onElementClic);
 
 function onElementClic(event) {
   event.preventDefault();
+
   if (event.target.nodeName !== "IMG") return;
 
   const largeImage = event.target.dataset.source;

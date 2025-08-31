@@ -24,12 +24,27 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  width: 1440px;
-  height: 696px;
+  max-width: 1440px;
+  max-height: 696px;
   padding: 24px 156px;
-  margin: 0;
+  margin: auto;
 }
 .gallery-image {
   width: 360px;
   height: 200px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image:hover,
+.gallery-image:focus {
+  transform: scale(1.05);
+  cursor: url(http://www.rw-designer.com/cursor-extern.php?id=36603), pointer;
+}
+
+.basicLightbox__placeholder img {
+  display: block;
+  max-width: 100vw; /* не ширше за вікно */
+  max-height: 100vh; /* не вище за вікно */
+  object-fit: contain; /* зберігає пропорції */
+  margin: 0 auto; /* центрування */
 }
