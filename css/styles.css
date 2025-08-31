@@ -37,7 +37,7 @@ img {
 
 .gallery-image:hover,
 .gallery-image:focus {
-  transform: scale(1.05);
+  transform: scale(calc(376 / 360), calc(208 / 200));
   cursor: url(http://www.rw-designer.com/cursor-extern.php?id=36603), pointer;
 }
 
