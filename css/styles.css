@@ -25,13 +25,23 @@ img {
   flex-wrap: wrap;
   gap: 24px;
   max-width: 1440px;
-  max-height: 696px;
-  padding: 24px 156px;
+  height: auto;
+  padding: 24px;
   margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+li {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: calc(33.333% - 48px);
 }
 .gallery-image {
-  width: 360px;
-  height: 200px;
+  width: 100%;
+  height: auto;
+
+  /* width: 360px;
+  height: 200px; */
   transition: transform 0.3s ease;
 }
 
@@ -44,7 +54,7 @@ img {
 .basicLightbox__placeholder img {
   display: block;
   max-width: 100vw; /* не ширше за вікно */
-  max-height: 100vh; /* не вище за вікно */
-  object-fit: contain; /* зберігає пропорції */
-  margin: 0 auto; /* центрування */
+  max-height: 100vh; /*не вище за вікно */
+  object-fit: contain; /*зберігає пропорції */
+  margin: 0 auto; /*центрування */
 }
